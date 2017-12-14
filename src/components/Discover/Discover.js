@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
-import DiscoverCard from "../components/layer/DiscoverCard.js"
-import API from "../utils/API";
+import DiscoverCard from "./DiscoverCard.js"
+import API from "../../utils/API";
 // import API
 
 class Discover extends Component {

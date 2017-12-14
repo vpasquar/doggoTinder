@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Navpills from './components/Navpills.js';
-import About from './components/About.js';
-import Discover from './components/Discover.js';
-import Search  from './components/Search.js';
+import Navpills from './components/Nav/Navpills.js';
+import About from './components/About/About.js';
+import Discover from './components/Discover/Discover.js';
+import Search  from './components/Search/Search.js';
 
 const App = () => (
   <Router>

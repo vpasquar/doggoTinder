@@ -1,7 +1,9 @@
 // import React
 import React, {Component} from 'react';
-import API   from '../utils/API';
+import API   from '../../utils/API';
 import "./Search.css";
+import Result from "./Results.js"
+import Form from './Form.js'
 // import API
 
 class Search extends Component {
@@ -52,40 +54,14 @@ class Search extends Component {
      return(
        <div className="container">
           <h1 className="text-center"> Search by Breed! </h1>
-          <form>
-              <label htmlFor="search"> Search: </label>
-              <input
-                onChange={this.handleInput}
-                // value={this.state.activeSearchTerm}
-                name="activeSearchTerm"
-                type="text"
-                className="form-control"
-                // options={this.state.searchTerms}
-                placeholder="Type in a dog breed to continue."
-                id="search"
-                list="breeds"
-              />
-              <datalist id="breeds">
-                {this.state.searchTerms.map((dog, i) => (
-                  <option
-                    value={dog}
-                    key={i}
-                  />
-                ))}
-              </datalist>
-              <button type="submit"
-                      className="btn btn-success"
-                      onClick={this.handleSubmit}
-              > Search...
-              </button>
-          </form>
-          <ul className="list-group search-results">
-              {this.state.dogBreedImages.map((dog,i) => (
-                 <li className="list-group-item">
-                     <img key = {i} className="img-responsive" alt="Dog" src={dog}/>
-                 </li>
-              ))}
-          </ul>
+          <Form
+            handleInput={this.handleInput}
+            searchTerms={this.state.searchTerms}
+            handleSubmit={this.handleSubmit}
+          />
+          <Result
+            resImgs={this.state.dogBreedImages}
+          />
        </div>
      )
   }
