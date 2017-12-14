@@ -1,0 +1,62 @@
+body {
+  height:100%;
+  padding:0;
+  margin:0;
+}
+
+.wrapper {
+  min-height:100%;
+  padding-bottom:100px;
+}
+
+.hero {
+  background-image:url(https://i.imgur.com/qkdpN.jpg);
+  height:500px;
+  background-size:cover;
+  background-position:50%;
+  position:relative;
+  color:#fff;
+}
+
+.hero > h1 {
+  padding-top:150px;
+  font-size:60px;
+  margin-top:0px;
+}
+
+.hero > h2 {
+  font-size:42px;
+
+}
+
+.hero * {
+  position:relative;
+  z-index:2;
+}
+
+.hero::after {
+  content:"";
+  display:block;
+  opacity:.4;
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+  background:#000;
+}
+
+.footer {
+  min-height:115px;
+  background:#e5e5e5;
+  position:relative;
+}
+
+.footer span {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:3px;
+  background:#b8b8b8;
+}

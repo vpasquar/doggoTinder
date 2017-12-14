@@ -13,11 +13,11 @@ class Search extends Component {
     activeSearchTerm:""
   }
 
-  componentDidMount() {
+  componentDidMount() { //when page loads
     this.listOfBreeds();
   }
 
-  handleInput = event => {
+  handleInput = event => {  //when search term is being entered
 
     console.log(event.target)
     const {name, value} = event.target
@@ -29,19 +29,21 @@ class Search extends Component {
 
   }
 
-  handleSubmit = event => {
+  handleSubmit = event => { //when form is submitted
     event.preventDefault();
     this.findBreed(this.state.activeSearchTerm);
   }
 
   findBreed = arg => {
-    API.findBreed(arg)
+    API.findBreed(arg)  //contacts API for pictures of dog the user entered
         .then(res => {
           console.log(res.data.message);
           this.setState({dogBreedImages:res.data.message})
         })
         .catch(err => console.log(err));
   }
+
+  // when page loads, a list of dog breeds is aquired and placed in state
   listOfBreeds() {
     API.listofBreeds()
        .then(res => {
@@ -67,12 +69,4 @@ class Search extends Component {
   }
 }
 
-
-
-// render()
-  // return dom elements
-  // needs form input for searching
-  // maps over dogBreedImages for printing out images to DOM
-
-
-  export default Search
+export default Search;
