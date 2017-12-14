@@ -3,6 +3,9 @@ import "./DiscoverCard.css";
 // import "./Button.css"
 import Button from "./Button.js"
 
+const alignCenter = {
+  textAlign:"center"
+};
 const DiscoverCard = props => (
   <div className="card">
     <div className="img-container">
@@ -22,7 +25,7 @@ const DiscoverCard = props => (
         handleVote={props.handleVote}
       />
     </div>
-    <h3> You have connected with {props.count} Dogs </h3>
+    <h3 style={alignCenter}> You have connected with {props.count} Dogs </h3>
   </div>
 );
 

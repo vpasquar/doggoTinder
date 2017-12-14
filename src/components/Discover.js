@@ -20,8 +20,9 @@ class Discover extends Component {
        if (val > 0.8) {
           let countHold = this.state.friendCount
           countHold++
+          alert("You found a match!")
           this.setState({friendCount:countHold})
-       } 
+       }
     }
     //load a new dog
     this.newDogImg();

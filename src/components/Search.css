@@ -1,13 +1,30 @@
-.dog-content {
-  display:block;
-  margin-top:10px;
-  margin-left:auto;
-  margin-right:auto;
+@media (min-width:768px) {
+  .container {
+    width:750px;
+  }
 }
 
-.dog-content > .dog-imgs {
+.container {
+  padding-right:15px;
+  padding-left:15px;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+form > .btn {
+  margin-top:4px;
+}
+.list-group-item {
+  position:relative;
+  display:block;
+  padding:10px 15px;
+  margin-bottom:-1px;
+  border:1px solid #ddd;
+}
+
+.list-group-item > img {
   display:block;
   margin-left:auto;
   margin-right:auto;
-  width:400px;
+  width:350px;
 }

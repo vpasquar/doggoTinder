@@ -50,7 +50,8 @@ class Search extends Component {
   }
   render() {
      return(
-       <div>
+       <div className="container">
+          <h1 className="text-center"> Search by Breed! </h1>
           <form>
               <label htmlFor="search"> Search: </label>
               <input
@@ -58,28 +59,33 @@ class Search extends Component {
                 // value={this.state.activeSearchTerm}
                 name="activeSearchTerm"
                 type="text"
-                className=""
+                className="form-control"
                 // options={this.state.searchTerms}
-                placeholder="Search for dog Images"
+                placeholder="Type in a dog breed to continue."
                 id="search"
                 list="breeds"
               />
               <datalist id="breeds">
-                {this.state.searchTerms.map(dog => (
+                {this.state.searchTerms.map((dog, i) => (
                   <option
                     value={dog}
+                    key={i}
                   />
                 ))}
               </datalist>
-              <button onClick={this.handleSubmit}> search
+              <button type="submit"
+                      className="btn btn-success"
+                      onClick={this.handleSubmit}
+              > Search...
               </button>
           </form>
-          <div className="dog-content">
-             {this.state.dogBreedImages.map(dog => (
-                <img className="dog-imgs" alt="" src={dog}/>
-             ))}
-          </div>
-
+          <ul className="list-group search-results">
+              {this.state.dogBreedImages.map((dog,i) => (
+                 <li className="list-group-item">
+                     <img key = {i} className="img-responsive" alt="Dog" src={dog}/>
+                 </li>
+              ))}
+          </ul>
        </div>
      )
   }
