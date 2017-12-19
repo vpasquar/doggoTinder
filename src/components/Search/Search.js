@@ -38,7 +38,10 @@ class Search extends Component {
     API.findBreed(arg)  //contacts API for pictures of dog the user entered
         .then(res => {
           console.log(res.data.message);
-          this.setState({dogBreedImages:res.data.message})
+          this.setState({
+            dogBreedImages:res.data.message,
+            activeSearchTerm:""
+          })
         })
         .catch(err => console.log(err));
   }
@@ -52,6 +55,7 @@ class Search extends Component {
        })
        .catch(err => console.log(err));
   }
+
   render() {
      return(
        <div className="container">

@@ -6,7 +6,8 @@ import API from "../../utils/API";
 class Discover extends Component {
   state = {
     friendCount: 0,
-    activeDogImg: ""
+    activeDogImg: "",
+    imageLoaded: false
   };
 
   componentDidMount() {
@@ -32,7 +33,9 @@ class Discover extends Component {
     API.random()
        .then(res => {
            console.log(res);
-           this.setState({ activeDogImg: res.data.message})
+           this.setState({ activeDogImg: res.data.message,
+                           imageLoaded:true
+           })
         })
         .catch(err => console.log(err));
   }
@@ -45,6 +48,7 @@ class Discover extends Component {
            name="Dog"
            handleVote={this.handleVote}
            count={this.state.friendCount}
+           loaded={this.state.imageLoaded}
          />
 
       </div>
